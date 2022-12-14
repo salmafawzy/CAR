@@ -8,6 +8,7 @@ public class RetryEXIT : MonoBehaviour
     public GameObject countDownt;
     public GameObject winningPanel;
     public GameObject RetryPanel;
+
     public Text numbers;
     public void Retry()
     {
