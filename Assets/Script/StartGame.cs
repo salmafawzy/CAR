@@ -8,9 +8,12 @@ public class StartGame : MonoBehaviour
     public GameObject countDownt;
     public GameObject StartPanel;
     public Text numbers;
+
+
+    //to start button
     public void Startgame()
     {
-        StartPanel.SetActive(false);
+        StartPanel.SetActive(false); 
         countDownt.SetActive(true);
         StartCoroutine(CountDown());
     }

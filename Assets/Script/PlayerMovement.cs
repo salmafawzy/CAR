@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     bool once = true;
     bool gameover = false;
+
+
     // Update is called once per frame
     void Update()
     { 
@@ -48,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
             Player.AddForce(0, 0, -RLSpeed * Time.deltaTime, ForceMode.VelocityChange);
         }
 
-
+        // if car falls off the road
         if(Player.transform.position.y <-34 && !gameover)
         {
             gameover = true;
@@ -59,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-
+    // if car hits any collider
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "BOX")
@@ -71,16 +73,16 @@ public class PlayerMovement : MonoBehaviour
         {
             if(!gameover)
             {
-                Smoke.Stop();
+                Smoke.Stop();  // to stop car smoke
                 ForwardSpeed = 0;
                 RLSpeed = 0;
-                ENDPanel.SetActive(true);
+                ENDPanel.SetActive(true);  // will enable winning panel
             }
           
         }
         else if(collision.collider.tag == "Next")
         {
-            StartCoroutine(nextleve());
+            StartCoroutine(nextleve());  
         }
 
     }
@@ -99,12 +101,12 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator nextleve()
     {
-        Smoke.Stop();
+        Smoke.Stop(); 
         ForwardSpeed = 0;
         RLSpeed = 0;
         NextPanel.SetActive(true);
-        Nresult.text = score.text;
-        yield return new WaitForSeconds(2);
+        Nresult.text = score.text;  // change text value
+        yield return new WaitForSeconds(2); // make delay for 2 seconds
         NextPanel.SetActive(false);
         CountDownPanel.SetActive(true);
         for(int i=5;i>=0;i--)
@@ -112,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
             countdown.text = i.ToString();
             yield return new WaitForSeconds(1);
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  //load next  scene using build index
     }
  
 }

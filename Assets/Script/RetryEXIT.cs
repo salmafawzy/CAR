@@ -10,6 +10,7 @@ public class RetryEXIT : MonoBehaviour
     public GameObject RetryPanel;
 
     public Text numbers;
+    // retry method for retry button
     public void Retry()
     {
         winningPanel.SetActive(false);
@@ -17,18 +18,19 @@ public class RetryEXIT : MonoBehaviour
         countDownt.SetActive(true);
         StartCoroutine(CountDown());
     }
+    // this function is used to make delay
     IEnumerator CountDown()
     {
         for (int i = 5; i >= 0; i--)
         {
             numbers.text = i.ToString();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f); // make delay for one second
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //to load the same scene again
     }
     public void EXIT()   
     {
-        Application.Quit();
+        Application.Quit(); // to exit application
     }
 }
  

@@ -500,7 +500,7 @@ PrefabInstance:
     - target: {fileID: 7951749605284508683, guid: 4d1624804e8167f479ab63c5302ff1d5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.61
+      value: -22.38
       objectReference: {fileID: 0}
     - target: {fileID: 7951749605284508683, guid: 4d1624804e8167f479ab63c5302ff1d5,
         type: 3}
@@ -15580,7 +15580,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1347306702}
         m_MethodName: EXIT
         m_Mode: 1
         m_Arguments:
@@ -15900,6 +15900,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CountDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804723431756368162, guid: bfdc53d7e5b44a147969b4f8f9cd6a14,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6804723432017442799, guid: bfdc53d7e5b44a147969b4f8f9cd6a14,
         type: 3}
